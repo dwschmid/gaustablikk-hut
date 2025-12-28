@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaustablikk Hytte - Velkommen / Welcome</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="language-selector">
+            <button onclick="setLanguage('no')" class="lang-btn active" id="btn-no">Norsk</button>
+            <button onclick="setLanguage('en')" class="lang-btn" id="btn-en">English</button>
+        </div>
+
+        <header>
+            <h1 class="lang-no">Velkommen til Gaustablikk! 🏔️</h1>
+            <h1 class="lang-en hidden">Welcome to Gaustablikk! 🏔️</h1>
+        </header>
+
+        <main>
+            <div class="welcome-section">
+                <div class="hero-text">
+                    <p class="lang-no">
+                        Vi håper du får et fantastisk opphold i vår hytte! Dette nettstedet inneholder nyttig informasjon
+                        og en praktisk utsjekk-sjekkliste.
+                    </p>
+                    <p class="lang-en hidden">
+                        We hope you have a wonderful stay in our cabin! This website contains useful information
+                        and a practical checkout checklist.
+                    </p>
+                </div>
+
+                <div class="info-grid">
+                    <div class="info-card">
+                        <div class="icon">🏠</div>
+                        <h3 class="lang-no">Om Hytta</h3>
+                        <h3 class="lang-en hidden">About the Cabin</h3>
+                        <p class="lang-no">Koselig hytte i Gaustablikk med alle fasiliteter</p>
+                        <p class="lang-en hidden">Cozy cabin in Gaustablikk with all amenities</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="icon">🚗</div>
+                        <h3 class="lang-no">Parkering</h3>
+                        <h3 class="lang-en hidden">Parking</h3>
+                        <p class="lang-no">Kun foran vår del av hytta<br>(vertikalt delt hytte)</p>
+                        <p class="lang-en hidden">Only in front of our cabin<br>(vertically split cabin)</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="icon">🔌</div>
+                        <h3 class="lang-no">Lading av bil</h3>
+                        <h3 class="lang-en hidden">Car Charging</h3>
+                        <p class="lang-no">Tilgjengelig - kontakt oss for tilgang</p>
+                        <p class="lang-en hidden">Available - contact us for access</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="icon">⏰</div>
+                        <h3 class="lang-no">Utsjekk</h3>
+                        <h3 class="lang-en hidden">Check-out</h3>
+                        <p class="lang-no">Senest kl. <strong>12:00</strong></p>
+                        <p class="lang-en hidden">By <strong>12:00 PM</strong></p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="icon">♻️</div>
+                        <h3 class="lang-no">Søppel</h3>
+                        <h3 class="lang-en hidden">Waste</h3>
+                        <p class="lang-no">Gjenvinningsstasjon ved utgang av Gaustablikk</p>
+                        <p class="lang-en hidden">Recycling station at Gaustablikk exit</p>
+                    </div>
+
+                    <div class="info-card">
+                        <div class="icon">🧹</div>
+                        <h3 class="lang-no">Ved Avreise</h3>
+                        <h3 class="lang-en hidden">When Leaving</h3>
+                        <p class="lang-no">Se vår utsjekk-sjekkliste</p>
+                        <p class="lang-en hidden">See our checkout checklist</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="checkout.html" class="btn btn-primary">
+                    <span class="lang-no">📋 Utsjekk Sjekkliste</span>
+                    <span class="lang-en hidden">📋 Checkout Checklist</span>
+                </a>
+                <a href="info.html" class="btn btn-secondary">
+                    <span class="lang-no">ℹ️ Mer Informasjon</span>
+                    <span class="lang-en hidden">ℹ️ More Information</span>
+                </a>
+            </div>
+
+            <div class="important-note">
+                <h3 class="lang-no">📧 Viktig Informasjon</h3>
+                <h3 class="lang-en hidden">📧 Important Information</h3>
+                <p class="lang-no">
+                    WiFi-passord, nøkkelboks-kode og andre private detaljer finner du i velkomstmeldingen
+                    vi sendte deg via Airbnb.
+                </p>
+                <p class="lang-en hidden">
+                    WiFi password, key box code and other private details can be found in the welcome message
+                    we sent you via Airbnb.
+                </p>
+            </div>
+
+            <div class="contact-section">
+                <h3 class="lang-no">Kontakt oss</h3>
+                <h3 class="lang-en hidden">Contact Us</h3>
+                <p class="lang-no">Hvis du har spørsmål, ikke nøl med å kontakte oss via Airbnb!<br>Ha et fantastisk opphold! 😊</p>
+                <p class="lang-en hidden">If you have any questions, don't hesitate to contact us via Airbnb!<br>Have a wonderful stay! 😊</p>
+                <p><strong>Kirsten & Dani</strong></p>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

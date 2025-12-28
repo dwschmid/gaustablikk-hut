@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utsjekk Sjekkliste - Checkout Checklist</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="language-selector">
+            <button onclick="setLanguage('no')" class="lang-btn active" id="btn-no">Norsk</button>
+            <button onclick="setLanguage('en')" class="lang-btn" id="btn-en">English</button>
+        </div>
+
+        <header>
+            <h1 class="lang-no">Utsjekk Sjekkliste ✅</h1>
+            <h1 class="lang-en hidden">Checkout Checklist ✅</h1>
+            <p class="lang-no">Vennligst fullfør alle punktene før du forlater hytta</p>
+            <p class="lang-en hidden">Please complete all items before leaving the cabin</p>
+        </header>
+
+        <main>
+            <div class="progress-bar">
+                <div class="progress-fill" id="progress"></div>
+                <span class="progress-text" id="progress-text">0%</span>
+            </div>
+
+            <div class="checklist-section">
+                <h2 class="lang-no">🧹 Rengjøring</h2>
+                <h2 class="lang-en hidden">🧹 Cleaning</h2>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">All oppvask er vasket og ryddet på plass</span>
+                    <span class="lang-en hidden">All dishes washed and put away</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Oppvaskmaskinen kan kjøre når du drar (hvis brukt)</span>
+                    <span class="lang-en hidden">Dishwasher can run when you leave (if used)</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Kjøleskapet er rent og tømt</span>
+                    <span class="lang-en hidden">Refrigerator is clean and emptied</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Gulv feiet/støvsuget</span>
+                    <span class="lang-en hidden">Floor swept/vacuumed</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Bad og toalett rengjort</span>
+                    <span class="lang-en hidden">Bathroom and toilet cleaned</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Alle overflater tørket av</span>
+                    <span class="lang-en hidden">All surfaces wiped down</span>
+                </label>
+            </div>
+
+            <div class="checklist-section">
+                <h2 class="lang-no">♻️ Søppel og Forsyninger</h2>
+                <h2 class="lang-en hidden">♻️ Waste and Supplies</h2>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Alt søppel fjernet fra hytta</span>
+                    <span class="lang-en hidden">All waste removed from cabin</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Søppel kastet på gjenvinningsstasjonen</span>
+                    <span class="lang-en hidden">Waste disposed at recycling station</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Toalettpapir erstattet (hvis tomt)</span>
+                    <span class="lang-en hidden">Toilet paper replaced (if empty)</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Ved/brensel erstattet (hvis brukt)</span>
+                    <span class="lang-en hidden">Firewood replaced (if used)</span>
+                </label>
+            </div>
+
+            <div class="checklist-section">
+                <h2 class="lang-no">🏠 Generelt</h2>
+                <h2 class="lang-en hidden">🏠 General</h2>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Alle personlige eiendeler pakket</span>
+                    <span class="lang-en hidden">All personal belongings packed</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Møbler og ting er på plass</span>
+                    <span class="lang-en hidden">Furniture and items in their place</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Sengetøy ryddig (ikke vask)</span>
+                    <span class="lang-en hidden">Bedding tidy (no washing needed)</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Håndklær hengt opp til tørk</span>
+                    <span class="lang-en hidden">Towels hung to dry</span>
+                </label>
+            </div>
+
+            <div class="checklist-section">
+                <h2 class="lang-no">🔒 Før du går</h2>
+                <h2 class="lang-en hidden">🔒 Before Leaving</h2>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Alle lys slått av</span>
+                    <span class="lang-en hidden">All lights turned off</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Komfyr/ovn slått av</span>
+                    <span class="lang-en hidden">Stove/oven turned off</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Alle vinduer lukket og låst</span>
+                    <span class="lang-en hidden">All windows closed and locked</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Alle dører låst</span>
+                    <span class="lang-en hidden">All doors locked</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Nøkkel lagt tilbake i nøkkelboks</span>
+                    <span class="lang-en hidden">Key returned to key box</span>
+                </label>
+
+                <label class="checklist-item">
+                    <input type="checkbox" class="checklist-checkbox">
+                    <span class="checkmark"></span>
+                    <span class="lang-no">Nøkkelboks kode kryptert/tilfeldig stilt</span>
+                    <span class="lang-en hidden">Key box code scrambled</span>
+                </label>
+            </div>
+
+            <div class="completion-message" id="completion-message">
+                <h2 class="lang-no">🎉 Takk for oppholdet!</h2>
+                <h2 class="lang-en hidden">🎉 Thank you for your stay!</h2>
+                <p class="lang-no">Du er klar til å sjekke ut. Ha en trygg hjemreise!</p>
+                <p class="lang-en hidden">You're ready to check out. Have a safe journey home!</p>
+            </div>
+
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-secondary">
+                    <span class="lang-no">← Tilbake</span>
+                    <span class="lang-en hidden">← Back</span>
+                </a>
+                <button onclick="resetChecklist()" class="btn btn-outline">
+                    <span class="lang-no">🔄 Tilbakestill</span>
+                    <span class="lang-en hidden">🔄 Reset</span>
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

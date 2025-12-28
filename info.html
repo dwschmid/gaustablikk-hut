@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hytteinformasjon - Cabin Information</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="language-selector">
+            <button onclick="setLanguage('no')" class="lang-btn active" id="btn-no">Norsk</button>
+            <button onclick="setLanguage('en')" class="lang-btn" id="btn-en">English</button>
+        </div>
+
+        <header>
+            <h1 class="lang-no">Hytteinformasjon 🏔️</h1>
+            <h1 class="lang-en hidden">Cabin Information 🏔️</h1>
+        </header>
+
+        <main>
+            <section class="info-section">
+                <h2 class="lang-no">📍 Beliggenhet</h2>
+                <h2 class="lang-en hidden">📍 Location</h2>
+                <p class="lang-no">
+                    Hytta ligger i Gaustablikk, et populært fjellferie og skianlegg i Telemark, Norge.
+                    Området tilbyr fantastiske muligheter for både vinter- og sommeraktiviteter.
+                </p>
+                <p class="lang-en hidden">
+                    The cabin is located in Gaustablikk, a popular mountain resort and ski area in Telemark, Norway.
+                    The area offers fantastic opportunities for both winter and summer activities.
+                </p>
+            </section>
+
+            <section class="info-section">
+                <h2 class="lang-no">🎿 Aktiviteter - Vinter</h2>
+                <h2 class="lang-en hidden">🎿 Activities - Winter</h2>
+                <ul class="lang-no">
+                    <li>Alpint og slalåm i Gaustablikk skisenter</li>
+                    <li>Langrenn</li>
+                    <li>Snowboard</li>
+                    <li>Topptur til Gaustatoppen (1883 moh)</li>
+                    <li>Skred og isfiske</li>
+                </ul>
+                <ul class="lang-en hidden">
+                    <li>Alpine skiing at Gaustablikk ski resort</li>
+                    <li>Cross-country skiing</li>
+                    <li>Snowboarding</li>
+                    <li>Summit tour to Gaustatoppen (1883m)</li>
+                    <li>Ice fishing</li>
+                </ul>
+            </section>
+
+            <section class="info-section">
+                <h2 class="lang-no">🥾 Aktiviteter - Sommer</h2>
+                <h2 class="lang-en hidden">🥾 Activities - Summer</h2>
+                <ul class="lang-no">
+                    <li>Fotturer og fjellvandring</li>
+                    <li>Sykling</li>
+                    <li>Besøk Gaustatoppen (med taubane eller til fots)</li>
+                    <li>Fiske</li>
+                    <li>Bærplukking</li>
+                </ul>
+                <ul class="lang-en hidden">
+                    <li>Hiking and mountain walking</li>
+                    <li>Cycling</li>
+                    <li>Visit Gaustatoppen (by cable car or on foot)</li>
+                    <li>Fishing</li>
+                    <li>Berry picking</li>
+                </ul>
+            </section>
+
+            <section class="info-section">
+                <h2 class="lang-no">🏠 Hyttefasiliteter</h2>
+                <h2 class="lang-en hidden">🏠 Cabin Facilities</h2>
+                <ul class="lang-no">
+                    <li><strong>WiFi:</strong> Se velkomstmelding fra vertene</li>
+                    <li><strong>Kjøkken:</strong> Fullt utstyrt med oppvaskmaskin</li>
+                    <li><strong>Bad:</strong> Såpe og toalettpapir inkludert</li>
+                    <li><strong>Parkering:</strong> Foran hytta (vår del av vertikalt delt hytte)</li>
+                    <li><strong>Lading:</strong> Billadestasjon tilgjengelig (kontakt oss)</li>
+                </ul>
+                <ul class="lang-en hidden">
+                    <li><strong>WiFi:</strong> See welcome message from hosts</li>
+                    <li><strong>Kitchen:</strong> Fully equipped with dishwasher</li>
+                    <li><strong>Bathroom:</strong> Soap and toilet paper included</li>
+                    <li><strong>Parking:</strong> In front of cabin (our side of vertically split cabin)</li>
+                    <li><strong>Charging:</strong> EV charging station available (contact us)</li>
+                </ul>
+            </section>
+
+            <section class="info-section">
+                <h2 class="lang-no">📋 Husregler</h2>
+                <h2 class="lang-en hidden">📋 House Rules</h2>
+                <div class="rules-grid">
+                    <div class="rule-card">
+                        <div class="icon">🚗</div>
+                        <h3 class="lang-no">Parkering</h3>
+                        <h3 class="lang-en hidden">Parking</h3>
+                        <p class="lang-no">Kun foran vår del av den vertikalt delte hytta</p>
+                        <p class="lang-en hidden">Only in front of our side of the vertically split cabin</p>
+                    </div>
+                    <div class="rule-card">
+                        <div class="icon">⏰</div>
+                        <h3 class="lang-no">Utsjekk</h3>
+                        <h3 class="lang-en hidden">Check-out</h3>
+                        <p class="lang-no">Senest kl. 12:00</p>
+                        <p class="lang-en hidden">By 12:00 PM</p>
+                    </div>
+                    <div class="rule-card">
+                        <div class="icon">🧹</div>
+                        <h3 class="lang-no">Rengjøring</h3>
+                        <h3 class="lang-en hidden">Cleaning</h3>
+                        <p class="lang-no">Hytta må forlates ren og ryddig</p>
+                        <p class="lang-en hidden">Cabin must be left clean and tidy</p>
+                    </div>
+                    <div class="rule-card">
+                        <div class="icon">♻️</div>
+                        <h3 class="lang-no">Søppel</h3>
+                        <h3 class="lang-en hidden">Waste</h3>
+                        <p class="lang-no">Ta med deg ved utreise til gjenvinningsstasjonen</p>
+                        <p class="lang-en hidden">Take with you to recycling station when leaving</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="info-section">
+                <h2 class="lang-no">🛒 Nærbutikk og tjenester</h2>
+                <h2 class="lang-en hidden">🛒 Nearby Shops and Services</h2>
+                <p class="lang-no">
+                    Det finnes butikker og fasiliteter i Gaustablikk-området.
+                    Nærmeste større by er Rjukan (ca. 20 min kjøring) med dagligvarebutikker,
+                    apotek, og andre tjenester.
+                </p>
+                <p class="lang-en hidden">
+                    There are shops and facilities in the Gaustablikk area.
+                    The nearest larger town is Rjukan (approx. 20 min drive) with grocery stores,
+                    pharmacy, and other services.
+                </p>
+            </section>
+
+            <section class="info-section">
+                <h2 class="lang-no">🌡️ Vær og klima</h2>
+                <h2 class="lang-en hidden">🌡️ Weather and Climate</h2>
+                <p class="lang-no">
+                    Gaustablikk ligger på høyfjellet, så vær forberedt på skiftende værforhold.
+                    Ta med varme klær selv om sommeren, da temperaturene kan være kjølige på kvelden.
+                    Vintertemperaturer kan være svært kalde - pakk tilsvarende!
+                </p>
+                <p class="lang-en hidden">
+                    Gaustablikk is located in the high mountains, so be prepared for changing weather conditions.
+                    Bring warm clothes even in summer, as temperatures can be cool in the evening.
+                    Winter temperatures can be very cold - pack accordingly!
+                </p>
+            </section>
+
+            <section class="info-section">
+                <h2 class="lang-no">📞 Nødnummer</h2>
+                <h2 class="lang-en hidden">📞 Emergency Numbers</h2>
+                <ul class="lang-no">
+                    <li><strong>Nødnummer (Politi):</strong> 112</li>
+                    <li><strong>Ambulanse (Medisinsk):</strong> 113</li>
+                    <li><strong>Brann:</strong> 110</li>
+                    <li><strong>Alarmsentral:</strong> 02800</li>
+                </ul>
+                <ul class="lang-en hidden">
+                    <li><strong>Emergency (Police):</strong> 112</li>
+                    <li><strong>Ambulance (Medical):</strong> 113</li>
+                    <li><strong>Fire:</strong> 110</li>
+                    <li><strong>Emergency Dispatch:</strong> 02800</li>
+                </ul>
+            </section>
+
+            <section class="info-section contact-highlight">
+                <h2 class="lang-no">💬 Kontakt Vertskap</h2>
+                <h2 class="lang-en hidden">💬 Contact Hosts</h2>
+                <p class="lang-no">
+                    Hvis du har spørsmål eller trenger hjelp, ikke nøl med å kontakte oss via Airbnb-meldinger.
+                    Vi svarer så raskt vi kan!
+                </p>
+                <p class="lang-en hidden">
+                    If you have questions or need help, don't hesitate to contact us via Airbnb messages.
+                    We'll respond as quickly as possible!
+                </p>
+                <p><strong>Kirsten & Dani</strong></p>
+            </section>
+
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-secondary">
+                    <span class="lang-no">← Tilbake til hjem</span>
+                    <span class="lang-en hidden">← Back to home</span>
+                </a>
+                <a href="checkout.html" class="btn btn-primary">
+                    <span class="lang-no">📋 Utsjekk Sjekkliste</span>
+                    <span class="lang-en hidden">📋 Checkout Checklist</span>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
