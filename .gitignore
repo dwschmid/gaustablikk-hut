@@ -1,0 +1,6 @@
+# Private files with sensitive information
+guest-message-templates.md
+
+# System files
+.DS_Store
+Thumbs.db
