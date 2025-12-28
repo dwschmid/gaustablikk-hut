@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bildegalleri - Photo Gallery</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .gallery-item {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-caption {
+            padding: 20px;
+        }
+
+        .gallery-caption p {
+            margin: 0;
+            color: var(--dark-color);
+            line-height: 1.6;
+            white-space: pre-line;
+        }
+
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 40px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: white;
+            font-size: 60px;
+            font-weight: bold;
+            cursor: pointer;
+            user-select: none;
+            padding: 20px;
+        }
+
+        .lightbox-prev {
+            left: 20px;
+        }
+
+        .lightbox-next {
+            right: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-item img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="language-selector">
+            <button onclick="setLanguage('no')" class="lang-btn active" id="btn-no">Norsk</button>
+            <button onclick="setLanguage('en')" class="lang-btn" id="btn-en">English</button>
+        </div>
+
+        <header>
+            <h1 class="lang-no">Bildegalleri 📸</h1>
+            <h1 class="lang-en hidden">Photo Gallery 📸</h1>
+            <p class="lang-no">Utforsk hytta vår og omgivelsene</p>
+            <p class="lang-en hidden">Explore our cabin and surroundings</p>
+        </header>
+
+        <main>
+            <div class="gallery-grid">
+                <!-- Exterior -->
+                <div class="gallery-item" onclick="openLightbox(0)">
+                    <img src="images/02-exterior.jpeg" alt="Cabin exterior">
+                    <div class="gallery-caption">
+                        <p class="lang-no">Koselig hytte, festet til nabohytta på høyre side fra dette perspektivet</p>
+                        <p class="lang-en hidden">Beautiful cabin, attached to neighbor cabin on the right from this view</p>
+                    </div>
+                </div>
+
+                <!-- View to Gaustatoppen -->
+                <div class="gallery-item" onclick="openLightbox(1)">
+                    <img src="images/03-view-gaustatoppen.jpeg" alt="View to Gaustatoppen">
+                    <div class="gallery-caption">
+                        <p class="lang-no">Utsikt mot Gaustatoppen fra verandaen til hytta. Spektakulært i alle slags vær og lys ❤️</p>
+                        <p class="lang-en hidden">View towards Gaustatoppen mountain from the veranda of the cabin. Spectacular in all sorts of weather and light ❤️</p>
+                    </div>
+                </div>
+
+                <!-- Entrance -->
+                <div class="gallery-item" onclick="openLightbox(2)">
+                    <img src="images/04-entrance-door.jpeg" alt="Entrance">
+                    <div class="gallery-caption">
+                        <p class="lang-no">Velkommen
+Inngangsdør og dør til utvendig lager (for ski etc)</p>
+                        <p class="lang-en hidden">Welcome
+Entrance door and door to outdoor storage (for skies etc)</p>
+                    </div>
+                </div>
+
+                <!-- Winter wonderland -->
+                <div class="gallery-item" onclick="openLightbox(3)">
+                    <img src="images/05-winter.jpeg" alt="Winter view">
+                    <div class="gallery-caption">
+                        <p class="lang-no">Vintereventyr
+Gaustatoppen er virkelig vakker til alle årstider.
+Her kan du stå ned</p>
+                        <p class="lang-en hidden">Winter wonderland
+Gaustatoppen is really beautiful any time of year.
+Here you can ski down</p>
+                    </div>
+                </div>
+
+                <!-- Living room -->
+                <div class="gallery-item" onclick="openLightbox(4)">
+                    <img src="images/06-living-room.jpeg" alt="Living room">
+                    <div class="gallery-caption">
+                        <p class="lang-no">Dette er den innbydende stuen, med en stor sofa med plass til mange, med utsikt mot en koselig peis og en stor TV.
+Perfekt for å nyte en familie- eller vennekveld</p>
+                        <p class="lang-en hidden">This is the welcoming livingroom, with a large sofa with room for many, facing a cosy fireplace and a large TV.
+Perfect for enjoying a family or friends night</p>
+                    </div>
+                </div>
+
+                <!-- Living room view -->
+                <div class="gallery-item" onclick="openLightbox(5)">
+                    <img src="images/07-living-room-view.jpeg" alt="Living room to dining">
+                    <div class="gallery-caption">
+                        <p class="lang-no">Stue med utsikt til spisebordet, peisen og TV
+:)</p>
+                        <p class="lang-en hidden">Livingroom with view to the dining table, the fireplace and the TV
+:)</p>
+                    </div>
+                </div>
+
+                <!-- Fireplace -->
+                <div class="gallery-item" onclick="openLightbox(6)">
+                    <img src="images/08-fireplace.jpeg" alt="Fireplace detail">
+                    <div class="gallery-caption">
+                        <p class="lang-no">Detalj av peisen</p>
+                        <p class="lang-en hidden">Detail on the fireplace</p>
+                    </div>
+                </div>
+
+                <!-- Dining table -->
+                <div class="gallery-item" onclick="openLightbox(7)">
+                    <img src="images/09-dining-table.jpeg" alt="Dining table">
+                    <div class="gallery-caption">
+                        <p class="lang-no">Spisebordet har plass til 12, men du trenger tilleggsplatene (finnes i soverom på førsteetasje)
+Dette er et perfekt sted for middag, frokost, andre måltider og spillkvelder</p>
+                        <p class="lang-en hidden">The diningtable can host 12, but you need the extention plates (found in bedroom on groundfloor)
+This is a perfect place for dining, breakfast, other meals and gamenight</p>
+                    </div>
+                </div>
+
+                <!-- Kitchen -->
+                <div class="gallery-item" onclick="openLightbox(8)">
+                    <img src="images/10-kitchen.jpeg" alt="Kitchen">
+                    <div class="gallery-caption">
+                        <p class="lang-no">Kjøkken med alt man trenger for matlaging og baking</p>
+                        <p class="lang-en hidden">Kitchen with all the things one needs for cooking and baking</p>
+                    </div>
+                </div>
+
+                <!-- Sauna -->
+                <div class="gallery-item" onclick="openLightbox(9)">
+                    <img src="images/11-sauna.jpeg" alt="Sauna">
+                    <div class="gallery-caption">
+                        <p class="lang-no">Badstue
+Denne badstuen varmes raskt og enkelt og er perfekt for kalde kvelder eller etter sport eller hvis du bare elsker å bade uten noen god grunn.
+Badstuen er festet til hovedbadet på førsteetasje</p>
+                        <p class="lang-en hidden">Sauna
+This sauna heats fast and simple and is perfect for cold nights or after sporst or if you just love to sauna for no good reason.
+The sauna is attached to the main bathroom on the ground floor</p>
+                    </div>
+                </div>
+
+                <!-- Bathroom -->
+                <div class="gallery-item" onclick="openLightbox(10)">
+                    <img src="images/12-bathroom.jpeg" alt="Bathroom">
+                    <div class="gallery-caption">
+                        <p class="lang-no">Bad med dusj og vaskemaskin. Inngang til badstue er fra dette rommet.</p>
+                        <p class="lang-en hidden">Bathroom with shower and washingmachine. Entrence to sauna is from this room.</p>
+                    </div>
+                </div>
+
+                <!-- Bathroom shower -->
+                <div class="gallery-item" onclick="openLightbox(11)">
+                    <img src="images/13-bathroom-shower.jpeg" alt="Bathroom shower">
+                    <div class="gallery-caption">
+                        <p class="lang-no">Bad med dusj og vaskemaskin. Inngang til badstue er fra dette rommet.</p>
+                        <p class="lang-en hidden">Bathroom with shower and washingmachine. Entrence to sauna is from this room.</p>
+                    </div>
+                </div>
+
+                <!-- Main bedroom -->
+                <div class="gallery-item" onclick="openLightbox(12)">
+                    <img src="images/14-main-bedroom.jpeg" alt="Main bedroom">
+                    <div class="gallery-caption">
+                        <p class="lang-no">Hovedsoverom, dobbeltseng (queen size)
+Inngang til privat bad med dusj</p>
+                        <p class="lang-en hidden">Main bedroom, double bed (queen size)
+Entrance to private bath with shower</p>
+                    </div>
+                </div>
+
+                <!-- Main bedroom hall -->
+                <div class="gallery-item" onclick="openLightbox(13)">
+                    <img src="images/15-main-bedroom-hall.jpeg" alt="View to hall">
+                    <div class="gallery-caption">
+                        <p class="lang-no">Utsikt til hall og privat bad</p>
+                        <p class="lang-en hidden">view to hall and private bathroom</p>
+                    </div>
+                </div>
+
+                <!-- Private bathroom -->
+                <div class="gallery-item" onclick="openLightbox(14)">
+                    <img src="images/16-private-bathroom.jpeg" alt="Private bathroom">
+                    <div class="gallery-caption">
+                        <p class="lang-no">Privat bad for hovedsoverom</p>
+                        <p class="lang-en hidden">Private bathroom for main bedroom</p>
+                    </div>
+                </div>
+
+                <!-- Second bedroom -->
+                <div class="gallery-item" onclick="openLightbox(15)">
+                    <img src="images/17-second-bedroom.jpeg" alt="Second bedroom">
+                    <div class="gallery-caption">
+                        <p class="lang-no">Andre rom på førsteetasje, med dobbeltseng (queen size)</p>
+                        <p class="lang-en hidden">Second room on ground floor, with double bed (queen size)</p>
+                    </div>
+                </div>
+
+                <!-- TV room upstairs -->
+                <div class="gallery-item" onclick="openLightbox(16)">
+                    <img src="images/18-tv-room-upstairs.jpeg" alt="TV room upstairs">
+                    <div class="gallery-caption">
+                        <p class="lang-no">TV-rom for barna/ungdommen og to soverom, hver til siden av TV-rommet.
+Sofaen dobler som en liten, ekstra, queen size seng</p>
+                        <p class="lang-en hidden">TV room for the kids/youth and two bedrooms, each to the side of the TV room.
+The sofa doubles as a small, extra, queen size bed</p>
+                    </div>
+                </div>
+
+                <!-- Ski map -->
+                <div class="gallery-item" onclick="openLightbox(17)">
+                    <img src="images/19-ski-map.png" alt="Ski map">
+                    <div class="gallery-caption">
+                        <p class="lang-no">Vår hytte er nær grønn løype nummer 24
+Dette kartet finner du ved å søke etter gaustablikk og skimap - det er mange flere løyper :)
+Super område for skiing</p>
+                        <p class="lang-en hidden">Our cabin is close to green piste number 24
+This map you find by searching for gaustablikk and skimap - there are many more pistes :)
+Super area for skiing</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <a href="index.html" class="btn btn-secondary">
+                    <span class="lang-no">← Tilbake til hjem</span>
+                    <span class="lang-en hidden">← Back to home</span>
+                </a>
+            </div>
+        </main>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+        <span class="lightbox-nav lightbox-prev" onclick="navigateLightbox(-1, event)">&#10094;</span>
+        <img id="lightbox-image" src="" alt="Enlarged view">
+        <span class="lightbox-nav lightbox-next" onclick="navigateLightbox(1, event)">&#10095;</span>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        let currentImageIndex = 0;
+        const images = document.querySelectorAll('.gallery-item img');
+
+        function openLightbox(index) {
+            currentImageIndex = index;
+            document.getElementById('lightbox-image').src = images[index].src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        function closeLightbox(event) {
+            if (event.target.id === 'lightbox' || event.target.className.includes('lightbox-close')) {
+                document.getElementById('lightbox').classList.remove('active');
+            }
+        }
+
+        function navigateLightbox(direction, event) {
+            event.stopPropagation();
+            currentImageIndex = (currentImageIndex + direction + images.length) % images.length;
+            document.getElementById('lightbox-image').src = images[currentImageIndex].src;
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            const lightbox = document.getElementById('lightbox');
+            if (lightbox.classList.contains('active')) {
+                if (e.key === 'Escape') {
+                    lightbox.classList.remove('active');
+                } else if (e.key === 'ArrowLeft') {
+                    navigateLightbox(-1, e);
+                } else if (e.key === 'ArrowRight') {
+                    navigateLightbox(1, e);
+                }
+            }
+        });
+    </script>
+</body>
+</html>
